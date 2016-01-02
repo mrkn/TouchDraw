@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TouchDraw" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,8 +16,33 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dMt-qx-yB8">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KBt-D2-g5c" customClass="TouchDrawView" customModule="TouchDraw" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <connections>
+                                    <outlet property="viewController" destination="BYZ-38-t0r" id="3Li-Bu-ITM"/>
+                                </connections>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KBt-D2-g5c" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2C3-GO-YeV"/>
+                            <constraint firstItem="KBt-D2-g5c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6bd-mn-FxW"/>
+                            <constraint firstItem="dMt-qx-yB8" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="EG7-tO-C8K"/>
+                            <constraint firstItem="KBt-D2-g5c" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="WC3-c4-OI4"/>
+                            <constraint firstItem="dMt-qx-yB8" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="r4d-BF-3bQ"/>
+                            <constraint firstItem="KBt-D2-g5c" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="tyh-YH-JNK"/>
+                            <constraint firstItem="dMt-qx-yB8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wZV-kN-Sxg"/>
+                            <constraint firstItem="dMt-qx-yB8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zoh-AK-Dy8"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="dMt-qx-yB8" id="gKY-nz-LT7"/>
+                        <outlet property="touchDrawView" destination="KBt-D2-g5c" id="ndc-n0-7WP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
